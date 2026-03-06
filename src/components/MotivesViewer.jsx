@@ -24,7 +24,6 @@ const MotivesViewer = ({ onComplete }) => {
         <div className="min-h-screen bg-purple-50 flex flex-col items-center justify-between p-6 md:p-10 transition-opacity duration-1000 fade-in font-inter">
             {/* Encabezado */}
             <div className="w-full max-w-5xl pt-4 pb-8 flex flex-col items-center text-center">
-                <span className="text-purple-500 font-bold tracking-[0.2em] uppercase text-xs mb-3">Tus Recuerdos</span>
                 <h2 className="text-4xl md:text-5xl font-black text-purple-900 mb-6 font-poppins drop-shadow-sm">
                     21 Motivos por los que te amo
                 </h2>

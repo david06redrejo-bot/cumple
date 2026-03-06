@@ -19,15 +19,7 @@ const FinalMotive = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] sm:w-[50rem] sm:h-[50rem] bg-purple-800 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-pulse"></div>
             </div>
 
-            <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center">
-                {/* Cabecera Clímax */}
-                <div className="inline-flex items-center justify-center gap-4 mb-12">
-                    <div className="h-px w-12 border-t border-purple-400/40"></div>
-                    <span className="text-purple-300 font-medium tracking-[0.4em] uppercase text-xs">
-                        El Clímax
-                    </span>
-                    <div className="h-px w-12 border-t border-purple-400/40"></div>
-                </div>
+            <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center mt-12">
 
                 {/* Quote Minimalista pero elegante para texto largo */}
                 <div className="relative px-6 md:px-12 py-10">
@@ -44,14 +36,6 @@ const FinalMotive = () => {
                     </div>
 
                     <svg className="absolute bottom-0 right-0 w-12 h-12 md:w-16 md:h-16 text-purple-400/20 translate-y-1/2 translate-x-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L16.09 18H2v-6h11.91l-1.99-3H24v12zm-12 0l2.073-3H2v-6h11.91l-1.99-3H12v12z" /></svg>
-                </div>
-
-                {/* Botón de cierre - Transición armoniosa */}
-                <div className="mt-24 opacity-0 animate-[fadeIn_1.5s_ease-out_1.5s_forwards]">
-                    <button className="px-10 py-5 rounded-full bg-white text-purple-900 font-black tracking-widest uppercase text-sm hover:bg-purple-100 hover:scale-105 hover:-translate-y-1 transition-all duration-500 shadow-[0_0_40px_rgba(168,85,247,0.4)] hover:shadow-[0_0_80px_rgba(168,85,247,0.7)] group flex items-center gap-3">
-                        <span>Es nuestro momento</span>
-                        <svg className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                    </button>
                 </div>
             </div>
         </div>

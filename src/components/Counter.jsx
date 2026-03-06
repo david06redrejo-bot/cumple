@@ -20,9 +20,15 @@ const Counter = ({ distance, error, onBypass }) => {
                     <h1 className="text-2xl font-black text-purple-950 mb-3 font-poppins tracking-tight">
                         {error ? "Habilita la Ubicación" : "Destino Cercano"}
                     </h1>
-                    <p className={`mb-10 font-medium text-sm leading-relaxed ${error ? 'text-red-500/90' : 'text-purple-600/80'}`}>
+                    <p className={`mb-2 font-medium text-sm leading-relaxed ${error ? 'text-red-500/90' : 'text-purple-600/80'}`}>
                         {error ? error : "Acércate al lugar de nuestro comienzo. El recuerdo se desbloqueará al llegar."}
                     </p>
+                    {/* Clue Date */}
+                    {!error && (
+                        <div className="mb-8 inline-block px-4 py-1.5 rounded-full bg-purple-100/50 border border-purple-200 text-purple-700 text-xs font-bold tracking-[0.2em]">
+                            PISTA: 04/01/2025
+                        </div>
+                    )}
 
                     <div className="w-full bg-white/80 rounded-3xl p-8 shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] border border-purple-100/50">
                         <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-purple-800 drop-shadow-sm font-poppins tracking-tighter">
