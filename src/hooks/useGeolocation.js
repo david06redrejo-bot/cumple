@@ -29,7 +29,7 @@ import { TARGET_COORDINATES, UNLOCK_DISTANCE_METERS } from '../config/constants'
  * if (isUnlocked) return <MotivesViewer />;
  * return <Counter distance={currentDistanceMeters} />;
  */
-export const useGeolocation = () => {
+const useGeolocation = () => {
     const [currentDistanceMeters, setCurrentDistanceMeters] = useState(null);
     const [isUnlocked, setIsUnlocked] = useState(false);
     const [error, setError] = useState(null);
@@ -96,3 +96,5 @@ export const useGeolocation = () => {
 
     return { currentDistanceMeters, isUnlocked, error };
 };
+
+export default useGeolocation;
