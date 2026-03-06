@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useGeolocation from './hooks/useGeolocation';
+import { useGeolocation } from './hooks/useGeolocation';
 import Counter from './components/Counter';
 import MotivesViewer from './components/MotivesViewer';
 import FinalMotive from './components/FinalMotive';
