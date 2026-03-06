@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import motivosData from '../data/motivos.json';
 
-const MotivesViewer = () => {
+const MotivesViewer = ({ onComplete }) => {
     // Solo visualizamos los primeros 20 motivos (el 21 es el final)
     const motives20 = motivosData.slice(0, 20);
 
@@ -80,14 +80,22 @@ const MotivesViewer = () => {
                     </span>
                 </div>
 
-                <button
-                    onClick={nextPage}
-                    disabled={currentPage === totalPages - 1}
-                    className="w-full sm:w-auto px-8 py-4 rounded-full bg-purple-600 text-white font-bold shadow-lg shadow-purple-600/30 hover:bg-purple-700 hover:shadow-purple-600/50 hover:-translate-y-0.5 focus:ring-4 focus:ring-purple-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-3"
-                >
-                    Siguiente
-                    <svg className="w-5 h-5 flex-shrink-0" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-                </button>
+                {currentPage === totalPages - 1 ? (
+                    <button
+                        onClick={onComplete}
+                        className="w-full sm:w-auto px-8 py-4 rounded-full bg-purple-600 text-white font-black tracking-wider uppercase shadow-lg shadow-purple-600/30 hover:bg-purple-700 hover:shadow-purple-600/50 hover:-translate-y-0.5 focus:ring-4 focus:ring-purple-300 transition-all duration-300 animate-pulse"
+                    >
+                        Desbloquear Final
+                    </button>
+                ) : (
+                    <button
+                        onClick={nextPage}
+                        className="w-full sm:w-auto px-8 py-4 rounded-full bg-purple-600 text-white font-bold shadow-lg shadow-purple-600/30 hover:bg-purple-700 hover:shadow-purple-600/50 hover:-translate-y-0.5 focus:ring-4 focus:ring-purple-300 transition-all duration-300 flex items-center justify-center gap-3"
+                    >
+                        Siguiente
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" strokeWidth="2.5" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                    </button>
+                )}
             </div>
         </div>
     );
