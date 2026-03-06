@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Counter = ({ distance }) => {
+const Counter = ({ distance, error }) => {
     return (
         <div className="min-h-screen bg-purple-50 flex items-center justify-center p-6 transition-opacity duration-700 fade-in font-inter overflow-hidden relative">
             {/* Decorative Blob Backgrounds */}
@@ -17,9 +17,11 @@ const Counter = ({ distance }) => {
                         </svg>
                     </div>
 
-                    <h1 className="text-2xl font-black text-purple-950 mb-3 font-poppins tracking-tight">Destino Cercano</h1>
-                    <p className="text-purple-600/80 mb-10 font-medium text-sm leading-relaxed">
-                        Acércate al lugar de nuestro comienzo. El recuerdo se desbloqueará al llegar.
+                    <h1 className="text-2xl font-black text-purple-950 mb-3 font-poppins tracking-tight">
+                        {error ? "Habilita la Ubicación" : "Destino Cercano"}
+                    </h1>
+                    <p className={`mb-10 font-medium text-sm leading-relaxed ${error ? 'text-red-500/90' : 'text-purple-600/80'}`}>
+                        {error ? error : "Acércate al lugar de nuestro comienzo. El recuerdo se desbloqueará al llegar."}
                     </p>
 
                     <div className="w-full bg-white/80 rounded-3xl p-8 shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] border border-purple-100/50">

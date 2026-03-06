@@ -5,7 +5,7 @@ import MotivesViewer from './components/MotivesViewer';
 import FinalMotive from './components/FinalMotive';
 
 function App() {
-    const { distance, isUnlocked, error } = useGeolocation();
+    const { currentDistanceMeters: distance, isUnlocked, error } = useGeolocation();
     const [isViewingFinal, setIsViewingFinal] = useState(false);
 
     return (
