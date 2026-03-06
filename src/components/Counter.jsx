@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Counter = ({ distance, error }) => {
+const Counter = ({ distance, error, onBypass }) => {
     return (
         <div className="min-h-screen bg-purple-50 flex items-center justify-center p-6 transition-opacity duration-700 fade-in font-inter overflow-hidden relative">
             {/* Decorative Blob Backgrounds */}
@@ -38,6 +38,14 @@ const Counter = ({ distance, error }) => {
                         <div className="w-2.5 h-2.5 rounded-full bg-purple-500 animate-pulse delay-75"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-purple-700 animate-pulse delay-150"></div>
                     </div>
+
+                    {/* Modo Debug / Testing Bypass */}
+                    <button
+                        onClick={onBypass}
+                        className="mt-8 px-4 py-2 text-xs font-semibold text-purple-400 bg-purple-50 rounded-full hover:bg-purple-100 hover:text-purple-600 transition-colors opacity-60 hover:opacity-100"
+                    >
+                        [Debug] No funciona, saltar a motivos
+                    </button>
                 </div>
             </div>
         </div>
