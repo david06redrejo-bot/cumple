@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Counter = ({ distance, error, onBypass }) => {
+    const [code, setCode] = useState('');
+    const SECRET_CODE = "ERIKA25";
+
+    const handleCodeSubmit = (e) => {
+        e.preventDefault();
+        if (code.trim().toUpperCase() === SECRET_CODE) {
+            onBypass();
+        } else {
+            alert("Código incorrecto");
+        }
+    };
     return (
         <div className="min-h-screen bg-purple-50 flex items-center justify-center p-6 transition-opacity duration-700 fade-in font-inter overflow-hidden relative">
             {/* Decorative Blob Backgrounds */}
@@ -45,13 +56,25 @@ const Counter = ({ distance, error, onBypass }) => {
                         <div className="w-2.5 h-2.5 rounded-full bg-purple-700 animate-pulse delay-150"></div>
                     </div>
 
-                    {/* Modo Debug / Testing Bypass */}
-                    <button
-                        onClick={onBypass}
-                        className="mt-8 px-4 py-2 text-xs font-semibold text-purple-400 bg-purple-50 rounded-full hover:bg-purple-100 hover:text-purple-600 transition-colors opacity-60 hover:opacity-100"
-                    >
-                        [Debug] No funciona, saltar a motivos
-                    </button>
+                    {/* Bypass Code Input */}
+                    <form onSubmit={handleCodeSubmit} className="mt-8 flex flex-col items-center gap-2">
+                        <p className="text-xs text-purple-400/80 uppercase tracking-wider font-bold">¿Problemas con la ubicación?</p>
+                        <div className="flex gap-2">
+                            <input
+                                type="text"
+                                value={code}
+                                onChange={(e) => setCode(e.target.value)}
+                                placeholder="Introduce el código"
+                                className="w-40 px-3 py-2 text-sm text-purple-700 bg-white/60 border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300 rounded-full text-center transition-all"
+                            />
+                            <button
+                                type="submit"
+                                className="px-4 py-2 text-sm font-bold text-white bg-purple-500 hover:bg-purple-600 rounded-full transition-colors shadow-sm"
+                            >
+                                IR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
